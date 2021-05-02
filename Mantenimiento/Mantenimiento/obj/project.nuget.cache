@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PTwjOQWctSQpaVhKue5IK4VoKy07shyXLPDuRNqM7CmQZbK/0Axd82kceV/0Zp7gHblK2AOwhhP8czyhc3TCHg==",
+  "dgSpecHash": "hA4eqmcw80Zx0LjznbjL/RVVBxqc83gyxWOdlpl5383nWSUjcIgpwzekgThQtZmnqe4HldDfeROnoUzA2H/e3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\walbe\\source\\repos\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj",
+  "projectFilePath": "C:\\Users\\walbe\\Documents\\GitHub\\Mantenimiento_NetCore\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\walbe\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\walbe\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\walbe\\source\\repos\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj": {}
+    "C:\\Users\\walbe\\Documents\\GitHub\\Mantenimiento_NetCore\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj": {}
   },
   "projects": {
-    "C:\\Users\\walbe\\source\\repos\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj": {
+    "C:\\Users\\walbe\\Documents\\GitHub\\Mantenimiento_NetCore\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\walbe\\source\\repos\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj",
+        "projectUniqueName": "C:\\Users\\walbe\\Documents\\GitHub\\Mantenimiento_NetCore\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj",
         "projectName": "Mantenimiento",
-        "projectPath": "C:\\Users\\walbe\\source\\repos\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj",
+        "projectPath": "C:\\Users\\walbe\\Documents\\GitHub\\Mantenimiento_NetCore\\Mantenimiento\\Mantenimiento\\Mantenimiento.csproj",
         "packagesPath": "C:\\Users\\walbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\walbe\\source\\repos\\Mantenimiento\\Mantenimiento\\obj\\",
+        "outputPath": "C:\\Users\\walbe\\Documents\\GitHub\\Mantenimiento_NetCore\\Mantenimiento\\Mantenimiento\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

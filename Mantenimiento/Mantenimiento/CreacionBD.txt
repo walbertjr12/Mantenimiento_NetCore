@@ -1,0 +1,16 @@
+﻿create database Mantenimiento;
+
+use mantenimiento;
+
+
+create table crud_base(
+	id int primary key identity(1,1),
+	codigo varchar(10) not null,
+	descripcioncorta varchar(50) not null,
+	descripcionlarga varchar(250) not null,
+	fechacreacion datetime,
+	usuariocreacion varchar(50),
+	fechamodificacion datetime,
+	usuariomodificacion varchar(50),
+	estado bit not null
+)
