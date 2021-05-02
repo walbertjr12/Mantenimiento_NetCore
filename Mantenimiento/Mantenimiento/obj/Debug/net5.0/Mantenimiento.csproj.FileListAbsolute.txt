@@ -322,3 +322,6 @@ C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimient
 C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\ref\Mantenimiento.dll
 C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Mantenimiento.pdb
 C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Mantenimiento.genruntimeconfig.cache
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Mantenimiento\Views\MantenimientoApi\MantenimientoIndex.cshtml.g.cs
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Mantenimiento\Views\MantenimientoApi\_CrudBaseForm.cshtml.g.cs
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Mantenimiento\Views\MantenimientoApi\_DetalleCrudBase.cshtml.g.cs

@@ -1,0 +1,51 @@
+﻿@model Mantenimiento.Models.DTO.CrudBaseDTO
+
+<div class="modal-header">
+    <h4>Formulario</h4>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <th>Descripción Corta</th>
+                <td>@Model.Descripcioncorta</td>
+            </tr>
+            <tr>
+                <th>Descripción Larga</th>
+                <td>@Model.Descripcionlarga</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>
+                    @if (Model.Estado)
+                    {
+                        <span class="badge badge-success badge-pill">Activo</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-success badge-pill">Inactivo</span>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <th>Fecha Creación</th>
+                <td>@Model.Fechacreacion.Value.ToString("yyyy-MM-dd")</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <div style="text-align:end">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 using Mantenimiento.EntityModels;
+using Mantenimiento.Helpers;
 using Mantenimiento.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,10 @@ namespace Mantenimiento
 
             //Automapper
             services.AddAutoMapper(typeof(Startup));
+
+            // Configure strongly typed settings objects
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
 
             //UnitOfWork
             services.AddScoped<IUnitOfWork, UnitOfWork>();
