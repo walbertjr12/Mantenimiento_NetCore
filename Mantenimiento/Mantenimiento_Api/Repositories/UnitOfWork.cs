@@ -14,9 +14,11 @@ namespace Mantenimiento_Api.Repositories
         {
             _db = db;
             CrudBase = new CrudBaseRepository(_db);
+            Empleado = new EmpleadoRepository(_db);
         }
 
         public ICrudBaseRepository CrudBase { get; private set; }
+        public IEmpleadoRepository Empleado { get; private set; }
 
         public void Dispose()
         {

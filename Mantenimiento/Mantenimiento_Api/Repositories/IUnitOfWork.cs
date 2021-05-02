@@ -9,6 +9,7 @@ namespace Mantenimiento_Api.Repositories
     public interface IUnitOfWork : IDisposable
     {
         ICrudBaseRepository CrudBase { get; }
+        IEmpleadoRepository Empleado { get; }
         void Save();
     }
 }

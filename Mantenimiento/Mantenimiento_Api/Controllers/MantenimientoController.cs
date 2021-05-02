@@ -3,6 +3,7 @@ using Mantenimiento_Api.EntityModels;
 using Mantenimiento_Api.Models;
 using Mantenimiento_Api.Models.DTO;
 using Mantenimiento_Api.Repositories;
+using Mantenimiento_Api.Repositories.RepositoryCRUD;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

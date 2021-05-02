@@ -325,3 +325,10 @@ C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimient
 C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Mantenimiento\Views\MantenimientoApi\MantenimientoIndex.cshtml.g.cs
 C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Mantenimiento\Views\MantenimientoApi\_CrudBaseForm.cshtml.g.cs
 C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Mantenimiento\Views\MantenimientoApi\_DetalleCrudBase.cshtml.g.cs
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\obj\Debug\net5.0\Razor\Areas\Empleados\Views\Empleado\EmpleadoIndex.cshtml.g.cs
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\walbe\Documents\GitHub\Mantenimiento_NetCore\Mantenimiento\Mantenimiento\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll

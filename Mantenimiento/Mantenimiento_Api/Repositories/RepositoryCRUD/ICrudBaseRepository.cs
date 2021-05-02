@@ -17,5 +17,6 @@ namespace Mantenimiento_Api.Repositories.RepositoryCRUD
         Task<ResponseModel> Guardar(CrudBase model);
         Task<ResponseModel> Actualizar(CrudBaseDTO model);
         Task<ResponseModel> Eliminar(int id);
+        void Limpiar();
     }
 }

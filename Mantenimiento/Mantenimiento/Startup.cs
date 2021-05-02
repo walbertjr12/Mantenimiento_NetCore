@@ -1,3 +1,4 @@
+using Mantenimiento.Data;
 using Mantenimiento.EntityModels;
 using Mantenimiento.Helpers;
 using Mantenimiento.Repositories;
@@ -31,6 +32,10 @@ namespace Mantenimiento
             services.AddControllersWithViews();
 
             services.AddDbContext<MantenimientoContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 

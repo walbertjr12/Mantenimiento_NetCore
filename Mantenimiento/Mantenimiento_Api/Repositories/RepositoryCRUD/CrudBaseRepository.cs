@@ -158,5 +158,10 @@ namespace Mantenimiento_Api.Repositories.RepositoryCRUD
             }
             return response;
         }
+
+        public void Limpiar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

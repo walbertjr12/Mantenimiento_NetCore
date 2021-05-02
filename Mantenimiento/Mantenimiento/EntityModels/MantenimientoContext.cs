@@ -18,6 +18,7 @@ namespace Mantenimiento.EntityModels
         }
 
         public virtual DbSet<CrudBase> CrudBases { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,6 +35,51 @@ namespace Mantenimiento.EntityModels
             modelBuilder.Entity<CrudBase>(entity =>
             {
                 entity.ToTable("crud_base");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Codigo)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("codigo");
+
+                entity.Property(e => e.Descripcioncorta)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("descripcioncorta");
+
+                entity.Property(e => e.Descripcionlarga)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("descripcionlarga");
+
+                entity.Property(e => e.Estado).HasColumnName("estado");
+
+                entity.Property(e => e.Fechacreacion)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fechacreacion");
+
+                entity.Property(e => e.Fechamodificacion)
+                    .HasColumnType("datetime")
+                    .HasColumnName("fechamodificacion");
+
+                entity.Property(e => e.Usuariocreacion)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("usuariocreacion");
+
+                entity.Property(e => e.Usuariomodificacion)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("usuariomodificacion");
+            });
+
+            modelBuilder.Entity<Empleado>(entity =>
+            {
+                entity.ToTable("empleado");
 
                 entity.Property(e => e.Id).HasColumnName("id");
 

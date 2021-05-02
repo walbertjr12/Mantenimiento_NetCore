@@ -1,3 +1,4 @@
+using Mantenimiento_Api.Data;
 using Mantenimiento_Api.EntityModels;
 using Mantenimiento_Api.Helpers;
 using Mantenimiento_Api.Repositories;
@@ -39,6 +40,10 @@ namespace Mantenimiento_Api
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
             var appSettings = appSettingsSection.Get<AppSettings>();
@@ -47,6 +52,7 @@ namespace Mantenimiento_Api
             //Automapper
             services.AddAutoMapper(typeof(Startup));
 
+            //UnitOfWork
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddSwaggerGen(c =>

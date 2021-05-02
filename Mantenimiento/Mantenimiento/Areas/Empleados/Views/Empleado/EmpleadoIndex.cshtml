@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewData["Title"] = "EmpleadoIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Empleados</h1>
+<div class="container-fluid">
+    <div style="text-align:end">
+        <button class="btn btn-primary" type="button" onclick="NuevoEmpleadoForm()"><i class="fas fa-plus"></i> Nuevo</button>
+    </div>
+
+    <div class="table-responsive" style="margin-top:20px">
+        <table id="empleadoTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Codigo</th>
+                    <th>Descripcion Corta</th>
+                    <th>Descripcion Larga</th>
+                    <th>Estado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--Nuevo Empleado Modal-->
+<div class="modal fade" id="nuevoEmpleadoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="nuevoEmpleadoForm">
+        </div>
+    </div>
+</div>
+
+<!--Detalle Empleado Modal-->
+<div class="modal fade" id="detalleEmpleadoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="detalleEmpleadoForm">
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        var empleadoTable = $("#empleadoTable").DataTable();
+
+        $(document).ready(function () {
+            loadDataTableEmpleados()
+        });
+
+        function loadDataTableEmpleados() {
+            crudTable = $('#empleadoTable').DataTable({
+                ajax: {
+                    url: "@Url.Action("GetCrudBases", "Mantenimiento", new { area = "Mantenimiento" })",
+                    type: "GET",
+                    datatype: "json",
+                    beforeSend: function () {
+                        //LoadWaitNotification();
+                    }
+                },
+                columns: [
+                    { data: "id", width: "10%" },
+                    { data: "codigo", width: "15%" },
+                    { data: "descripcioncorta", width: "15%" },
+                    { data: "descripcionlarga", width: "25%" },
+                    {
+                        data: "estado", width: "15%", render: function (data, type, row) {
+                            var badge = {
+                                "true":
+                                {
+                                    'title': 'Activo',
+                                    'class': 'badge-success'
+                                },
+                                "false":
+                                {
+                                    'title': 'Inactivo',
+                                    'class': 'badge-danger'
+                                },
+
+                            };
+                            if (typeof badge[data] === 'undefined') {
+                                return data;
+                            }
+                            return '<span class="badge ' + badge[data].class + ' badge-pill">' + badge[data].title + '</span>';
+                        }
+                    },
+                    {
+                        data: "id",
+                        width: "5%",
+                        render: function (data, type, row) {
+                                return `<div class="text-center"><div class="btn-group">
+                                                                <button data-toggle="dropdown" class="btn btn-primary btn-xs block dropdown-toggle" aria-expanded="false">Acciones</button>
+                                                                <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; top: 24px; left: 0px; will-change: top, left;">
+                                                                    <li><a class="dropdown-item" onclick="Editar('${data}')"><i class="fa fa-edit text-primary"></i>&nbsp;&nbsp;Editar</a></li>
+                                                                    <li><a class="dropdown-item" onclick="Detalle('${data}')"><i class="fa fa-eye text-info"></i>&nbsp;&nbsp;Detalles</a></li>
+                                                                    <li><a class="dropdown-item" onclick="Eliminar('${data}','${row.descripcioncorta}')"><i class="fa fa-trash text-danger"></i>&nbsp;&nbsp;Eliminar</a></li>
+                                                                </ul>
+                                                            </div></div>
+                                                            `;
+                        }
+                    }
+                ],
+                pageLength: 10,
+                dom: 'lTfgitp',
+                destroy: true,
+            });
+        }
+
+        function NuevoRegistroForm() {
+            $.ajax({
+                url: "@Url.Action("CrudBaseForm", "Mantenimiento",new { area = "Mantenimiento" })",
+                type: "get",
+                beforeSend: function () {
+                    //LoadWaitNotification();
+                }
+            }).done(function (data) {
+                $("#nuevoRegistroForm").html(data);
+                $("#nuevoRegistroModal").modal('show');
+            }).fail(function (error) {
+                console.log(error);
+            });
+        }
+
+        function Editar(id) {
+            $.ajax({
+                url: "@Url.Action("CrudBaseForm", "Mantenimiento",new { area = "Mantenimiento" })",
+                type: "get",
+                data: { id },
+                beforeSend: function () {
+                    //LoadWaitNotification();
+                }
+            }).done(function (data) {
+                $("#nuevoRegistroForm").html(data);
+                $("#nuevoRegistroModal").modal('show');
+            }).fail(function (error) {
+                console.log(error);
+            });
+        }
+
+        function Detalle(id) {
+            $.ajax({
+                url: "@Url.Action("DetalleCrudBase", "Mantenimiento",new { area = "Mantenimiento" })",
+                type: "get",
+                data: { id },
+                beforeSend: function () {
+                    //LoadWaitNotification();
+                }
+            }).done(function (data) {
+                $("#detalleRegistroForm").html(data);
+                $("#detalleRegistroModal").modal('show');
+            }).fail(function (error) {
+                console.log(error);
+            });
+        }
+
+        function Eliminar(id, descripcion) {
+            swal.fire({
+                title: '<strong>¿Desea eliminar el registro?</strong>',
+                icon: 'warning',
+                html: "Se desactivará el registro <b>" + descripcion + "</b>.",
+                backdrop: 'rgba(255, 0, 0, 0.1)',
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText:
+                    '<i class="fa fa-trash"></i> Eliminar',
+                confirmButtonAriaLabel: 'Listo!',
+                confirmButtonColor: '#d33',
+                cancelButtonText: 'Cancelar',
+                showLoaderOnConfirm: true,
+                preConfirm: () => {
+                    $.ajax({
+                        url: "@Url.Action("Eliminar","Mantenimiento",new { area = "Mantenimiento" })",
+                        type: "get",
+                        data: { id },
+                        beforeSend: function () {
+                            //LoadWaitNotification();
+                        },
+                        success: function (data) {
+                        var success = data.result;
+                        var message = data.message;
+                            if (success == true) {
+                                loadDataTableCruds();
+                            toastr.success(message, 'Correcto!')
+                            }
+                            else {
+                                toastr.error(message, 'Error!')
+                            }
+                    },
+                    }).done(function (data) {
+                    }).fail(function (error) {
+                        console.log(error);
+                    });
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            })
+        }
+
+    </script>
+}
