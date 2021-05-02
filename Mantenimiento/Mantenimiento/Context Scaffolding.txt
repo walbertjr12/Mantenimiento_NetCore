@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=LAPTOP-A3FADA4F\SQLEXPRESS;Database=Mantenimiento;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o EntityModels -force
